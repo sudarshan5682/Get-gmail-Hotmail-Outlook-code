@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mail_Shop5682_bot</title>
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #000;
+            overflow-y: auto;
+            font-family: 'Segoe UI', sans-serif;
+            overscroll-behavior-y: auto;
+        }
+
+        /* ১. মেইন হেডার */
+        .app-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: #0d1117;
+            color: #58a6ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10005;
+            border-bottom: 1px solid #30363d;
+        }
+
+        /* ২. ব্লকার লেয়ার */
+        .blocker-layer {
+            position: fixed;
+            top: 60px; 
+            left: 0;
+            width: 100%;
+            height: 120px; 
+            background: #0d1117;
+            z-index: 10004;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            border-bottom: 2px solid #58a6ff;
+        }
+
+        .status-row {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .refresh-btn {
+            background: #1c2128;
+            color: #58a6ff;
+            border: 1px solid #58a6ff;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* ৩. আইফ্রেম কন্টেইনার - লোগো ঢাকার আসল ট্রিক এখানে */
+        .web-content {
+            position: absolute;
+            top: 180px; /* হেডার + ব্লকার */
+            left: 0;
+            width: 100%;
+            height: calc(100% - 180px);
+            z-index: 1;
+            overflow: hidden; /* ভেতরের বাড়তি অংশ কেটে দেবে */
+        }
+
+        iframe {
+            width: 100%;
+            height: 110%; /* উচ্চতা একটু বাড়িয়ে দেওয়া হয়েছে */
+            border: none;
+            /* নিচের লাইনটি লোগোকে ব্লকারের নিচে আরও ঠেলে দেবে */
+            margin-top: -65px; 
+        }
+
+        .info-text {
+            color: #8b949e;
+            font-size: 11px;
+            font-family: monospace;
+        }
+
+        .live-dot {
+            height: 8px; width: 8px;
+            background-color: #3fb950;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-header">
+        <h1 style="margin:0; font-size:18px; letter-spacing:1px;">Mail_Shop5682_bot</h1>
+    </div>
+
+    <div class="blocker-layer">
+        <div class="status-row">
+            <div class="info-text"><span class="live-dot"></span>ID: 5682_AUTH</div>
+            <div class="info-text">ENCRYPTED_MODE</div>
+        </div>
+        <button class="refresh-btn" onclick="location.reload()">REFRESH </button>
+    </div>
+
+    <div class="web-content">
+        <iframe id="appFrame" src="https://tridib.codes/"></iframe>
+    </div>
+
+</body>
+</html>
